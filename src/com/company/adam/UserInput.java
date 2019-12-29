@@ -6,8 +6,9 @@ public class UserInput {
     public int position;
     Scanner input = new Scanner(System.in);
 
-    public void getInput(){
+    public int getInput(){
         System.out.println("Enter the number of the square you want to place your piece in");
         position = input.nextInt();
+        return position;
     }
 }
