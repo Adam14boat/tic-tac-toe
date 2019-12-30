@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class ComputerPick {
-    Random rnd = new Random();
+    static Random rnd = new Random();
 
     /**
      * receives the state and arr arrays and randomly chooses and places an index that is free
@@ -46,5 +46,28 @@ public class ComputerPick {
         return tmp;
     }
 
-
+    public boolean hasComputerWon(int[][] state) {
+        boolean player_top_diagonal = true;
+        boolean player_column = true;
+        boolean player_row = true;
+        boolean player_bottom_diagonal = false;
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <=2; j++) {
+                // diagonal from top to bottom
+                if (state[i][j] != 2 && i == j) {
+                    player_top_diagonal = false;
+                }
+                if (state[i][j] != 2) {
+                    player_column = false;
+                }
+                if (state[j][i] != 2) {
+                    player_row = false;
+                }
+            }
+        }
+        if (state[2][0] == state[0][2] && state[1][1] == state[2][0] && state[1][1] == 2) {
+            player_bottom_diagonal = true;
+        }
+        return player_top_diagonal || player_column || player_row || player_bottom_diagonal;
+    }
 }
