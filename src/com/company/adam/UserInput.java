@@ -6,7 +6,7 @@ public class UserInput {
     private int cell;
     Scanner input = new Scanner(System.in);
 
-    public int[][] getInput(int[][] state, int[][] arr){
+    public void getInput(int[][] state, int[][] arr){
         System.out.println("Enter the number of the cell you want to place your piece in");
         cell = input.nextInt();
         boolean cell_not_placed = true;
@@ -31,7 +31,6 @@ public class UserInput {
                 }
             }
         }
-        return state;
     }
 
     public boolean hasUserWon(int[][] state) {

@@ -12,7 +12,7 @@ public class ComputerPick {
      * @param arr an array in which each number corresponds to a cell
      * @return 2 in the free cell of state
      */
-    public int[][] randomPick(int[][] state, int[][] arr){
+    public void randomPick(int[][] state, int[][] arr){
         ArrayList<Integer> tmp = FreeIndices(state, arr);
         // use length of tmp to select next move
         int index = rnd.nextInt(tmp.size());
@@ -25,7 +25,6 @@ public class ComputerPick {
                 }
             }
         }
-        return state;
     }
 
     /**
