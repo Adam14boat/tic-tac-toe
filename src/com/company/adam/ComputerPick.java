@@ -17,8 +17,8 @@ public class ComputerPick {
         // use length of tmp to select next move
         int index = rnd.nextInt(tmp.size());
         // Update state with the selection
-        for (int i = 1; i <= 3; i++) {
-            for (int j = 1; j <= 3; j++) {
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
                 if (arr[i][j] == index) {
                     state[i][j] = 2;
                 }
@@ -35,8 +35,8 @@ public class ComputerPick {
     private ArrayList<Integer> FreeIndices(int[][] state, int[][] arr){
         // return all indices of free cells in state
         ArrayList<Integer> tmp = new ArrayList<Integer>(0);
-        for (int i = 1; i <= 3; i++) {
-            for (int j = 1; j <= 3; j++) {
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
                 if (state[i][j] == 0) {
                     tmp.add(arr[i][j]);
                 }
