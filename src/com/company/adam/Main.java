@@ -16,20 +16,17 @@ public class Main {
                 System.out.println("Congratulations you won!!");
                 return;
             }
-            System.out.println(Arrays.deepToString(state));
             computerpick.randomPick(state, arr);
             if (computerpick.hasComputerWon(state)) {
                 System.out.println("You lose, better luck next time");
                 return;
             }
-            System.out.println(Arrays.deepToString(state));
         }
         userinput.getInput(state, arr);
         if (userinput.hasUserWon(state)) {
             System.out.println("Congratulations you won!!");
-            return;
         }
-        System.out.println(Arrays.deepToString(state));
+
     }
 
 }

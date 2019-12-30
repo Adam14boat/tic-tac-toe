@@ -29,30 +29,48 @@ public class UserInput {
                 }
             }
         }
+        System.out.println(Arrays.deepToString(state));
     }
 
     public boolean hasUserWon(int[][] state) {
-        boolean player_top_diagonal = true;
-        boolean player_column = true;
-        boolean player_row = true;
-        boolean player_bottom_diagonal = false;
+        boolean has_player_won = false;
+        int countTopDiagonal = 0;
+        int countColumn = 0;
+        int countRow = 0;
+        int countBottomDiagonal = 0;
         for (int i = 0; i <= 2; i++) {
+            countColumn = 0;
+            countRow = 0;
             for (int j = 0; j <=2; j++) {
                 // diagonal from top to bottom
-                if (state[i][j] != 1 && i == j) {
-                    player_top_diagonal = false;
+                if (state[j][i] == 1 && i == j) {
+                    countTopDiagonal++;
                 }
-                if (state[i][j] != 1) {
-                    player_column = false;
+                if (state[2-j][2-i] == 1) {
+                    countBottomDiagonal++;
                 }
-                if (state[j][i] != 1) {
-                    player_row = false;
+                if (state[i][j] == 1) {
+                    countColumn++;
+                }
+                if (state[j][i] == 1) {
+                    countRow++;
                 }
             }
+            if (countColumn == 3) {
+                has_player_won = true;
+                break;
+            }
+            if (countRow == 3) {
+                has_player_won = true;
+                break;
+            }
         }
-        if (state[2][0] == state[0][2] && state[1][1] == state[2][0] && state[1][1] == 1) {
-            player_bottom_diagonal = true;
+        if (countTopDiagonal == 3) {
+            has_player_won = true;
         }
-        return player_top_diagonal || player_column || player_row || player_bottom_diagonal;
+        if (countBottomDiagonal == 3) {
+            has_player_won = true;
+        }
+        return has_player_won;
     }
 }
