@@ -32,7 +32,7 @@ public class ComputerPick {
      * @param arr
      * @return the free cells that are represented in array tmp
      */
-    public ArrayList<Integer> FreeIndices(int[][] state, int[][] arr){
+    private ArrayList<Integer> FreeIndices(int[][] state, int[][] arr){
         // return all indices of free cells in state
         ArrayList<Integer> tmp = new ArrayList<Integer>(0);
         for (int i = 1; i <= 3; i++) {
