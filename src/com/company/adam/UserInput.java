@@ -34,4 +34,28 @@ public class UserInput {
         return state;
     }
 
+    public boolean hasUserWon(int[][] state) {
+        boolean player_top_diagonal = true;
+        boolean player_column = true;
+        boolean player_row = true;
+        boolean player_bottom_diagonal = false;
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <=2; j++) {
+                // diagonal from top to bottom
+                if (state[i][j] != 1 && i == j) {
+                    player_top_diagonal = false;
+                }
+                if (state[i][j] != 1) {
+                    player_column = false;
+                }
+                if (state[j][i] != 1) {
+                    player_row = false;
+                }
+            }
+        }
+        if (state[3][1] == state[1][3] && state[2][2] == state[3][1] && state[2][2] == 1) {
+            player_bottom_diagonal = true;
+        }
+        return player_top_diagonal || player_column || player_row || player_bottom_diagonal;
+    }
 }
