@@ -52,7 +52,7 @@ public class UserInput {
                 }
             }
         }
-        if (state[3][1] == state[1][3] && state[2][2] == state[3][1] && state[2][2] == 1) {
+        if (state[2][0] == state[0][2] && state[1][1] == state[2][0] && state[1][1] == 1) {
             player_bottom_diagonal = true;
         }
         return player_top_diagonal || player_column || player_row || player_bottom_diagonal;
