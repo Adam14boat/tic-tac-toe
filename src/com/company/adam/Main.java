@@ -18,6 +18,10 @@ public class Main {
             }
             System.out.println(Arrays.deepToString(state));
             computerpick.randomPick(state, arr);
+            if (computerpick.hasComputerWon(state)) {
+                System.out.println("You lose, better luck next time");
+                return;
+            }
             System.out.println(Arrays.deepToString(state));
         }
         userinput.getInput(state, arr);
