@@ -16,7 +16,6 @@ public class UserInput {
                 if (arr[i][j] == cell && state[i][j] == 0) {
                     cell_not_placed = false;
                     state[i][j] = 1;
-                    break;
                 }
             }
         }
