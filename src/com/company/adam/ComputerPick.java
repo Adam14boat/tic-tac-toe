@@ -16,6 +16,7 @@ public class ComputerPick {
         ArrayList<Integer> tmp = FreeIndices(state, arr);
         // use length of tmp to select next move
         int index = rnd.nextInt(tmp.size());
+        index = tmp.get(index);
         // Update state with the selection
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
@@ -38,6 +39,7 @@ public class ComputerPick {
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
                 if (state[i][j] == 0) {
+                    System.out.println(arr[i][j]);
                     tmp.add(arr[i][j]);
                 }
             }
