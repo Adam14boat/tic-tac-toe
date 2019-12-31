@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class ComputerPick {
-    static Random rnd = new Random();
+    public static Random rnd = new Random();
 
     /**
      * receives the state and arr arrays and randomly chooses and places an index that is free
