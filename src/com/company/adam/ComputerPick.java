@@ -45,6 +45,11 @@ public class ComputerPick {
         return tmp;
     }
 
+    /**
+     * checks if the computer won
+     * @param state the current state of the game
+     * @return if the computer has won
+     */
     public boolean hasComputerWon(int[][] state) {
         boolean has_computer_won = false;
         int countTopDiagonal = 0;

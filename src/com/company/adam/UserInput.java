@@ -5,6 +5,11 @@ import java.util.*;
 public class UserInput {
     static Scanner input = new Scanner(System.in);
 
+    /**
+     * gets the input of the user and places it in an open cell
+     * @param state
+     * @param arr
+     */
     public void getInput(int[][] state, int[][] arr){
         System.out.println("Enter the number of the cell you want to place your piece in");
         int cell = input.nextInt();
@@ -31,6 +36,11 @@ public class UserInput {
         }
     }
 
+    /**
+     * checks if the user won
+     * @param state the current state of the game
+     * @return if the user has won
+     */
     public boolean hasUserWon(int[][] state) {
         boolean has_player_won = false;
         int countTopDiagonal = 0;

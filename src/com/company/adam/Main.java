@@ -31,6 +31,10 @@ public class Main {
 
     }
 
+    /**
+     * prints the state if the form of a 3 by 3 matrix
+     * @param state
+     */
     public static void printMatrix(int[][] state) {
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= state[i].length - 1; j++) {
