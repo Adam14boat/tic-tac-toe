@@ -25,7 +25,6 @@ public class ComputerPick {
                 }
             }
         }
-        System.out.println(Arrays.deepToString(state));
     }
 
     /**
@@ -39,7 +38,6 @@ public class ComputerPick {
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
                 if (state[i][j] == 0) {
-                    System.out.println(arr[i][j]);
                     tmp.add(arr[i][j]);
                 }
             }

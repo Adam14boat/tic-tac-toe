@@ -29,7 +29,6 @@ public class UserInput {
                 }
             }
         }
-        System.out.println(Arrays.deepToString(state));
     }
 
     public boolean hasUserWon(int[][] state) {

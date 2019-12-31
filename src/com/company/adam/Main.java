@@ -12,11 +12,13 @@ public class Main {
         System.out.println(Arrays.deepToString(state));
         for (int i = 1; i <= 4; i++) {
             userinput.getInput(state, arr);
+            printMatrix(state);
             if (userinput.hasUserWon(state)) {
                 System.out.println("Congratulations you won!!");
                 return;
             }
             computerpick.randomPick(state, arr);
+            printMatrix(state);
             if (computerpick.hasComputerWon(state)) {
                 System.out.println("You lose, better luck next time");
                 return;
@@ -27,6 +29,16 @@ public class Main {
             System.out.println("Congratulations you won!!");
         }
 
+    }
+
+    public static void printMatrix(int[][] state) {
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= state[i].length - 1; j++) {
+                System.out.printf("%4d", state[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
 
 }
