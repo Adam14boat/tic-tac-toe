@@ -55,6 +55,7 @@ public class ComputerPick {
         int countTopDiagonal = 0;
         int countColumn = 0;
         int countRow = 0;
+        int lastJ = 0;
         int countBottomDiagonal = 0;
         for (int i = 0; i <= 2; i++) {
             countColumn = 0;
@@ -64,7 +65,7 @@ public class ComputerPick {
                 if (state[j][i] == 2 && i == j) {
                     countTopDiagonal++;
                 }
-                if (state[2-j][2-i] == 2) {
+                if (state[2-j][2-i] == 2 && state[2-i][2-j] == 2) {
                     countBottomDiagonal++;
                 }
                 if (state[j][i] == 2) {

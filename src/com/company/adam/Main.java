@@ -9,7 +9,7 @@ public class Main {
 	// write your code here
         int[][] arr = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         int[][] state = {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
-        System.out.println(Arrays.deepToString(state));
+        printMatrix(state);
         for (int i = 1; i <= 4; i++) {
             userinput.getInput(state, arr);
             printMatrix(state);
@@ -37,7 +37,7 @@ public class Main {
      */
     public static void printMatrix(int[][] state) {
         for (int i = 0; i <= 2; i++) {
-            for (int j = 0; j <= state[i].length - 1; j++) {
+            for (int j = 0; j <= 2; j++) {
                 System.out.printf("%4d", state[i][j]);
             }
             System.out.println();

@@ -55,7 +55,8 @@ public class UserInput {
                 if (state[j][i] == 1 && i == j) {
                     countTopDiagonal++;
                 }
-                if (state[2-j][2-i] == 1) {
+
+                if (state[2-j][2-i] == 1 && state[2-i][2-j] == 1) {
                     countBottomDiagonal++;
                 }
                 if (state[i][j] == 1) {
