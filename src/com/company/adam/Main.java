@@ -32,15 +32,22 @@ public class Main {
     }
 
     /**
-     * prints the state if the form of a 3 by 3 matrix
+     * prints the state of the form of a 3 by 3 matrix
      * @param state
      */
     public static void printMatrix(int[][] state) {
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
-                System.out.printf("%4d", state[i][j]);
+                if (j != 2) {
+                    System.out.printf("%3d  |", state[i][j]);
+                } else {
+                    System.out.printf("%3d", state[i][j]);
+                }
             }
             System.out.println();
+            if (i != 2) {
+                System.out.println( " _ __|__ __|__ _");
+            }
         }
         System.out.println();
     }
